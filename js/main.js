@@ -21,7 +21,7 @@ if (cantidadPrendas <= 0 || isNaN(cantidadPrendas)) {
             "\n4. Jean" +
             "\n5. Pantalón" +
             "\n6. Vestido" +
-            "\n7. Falda" +
+            "\n7. pollera" +
             "\n8. Sweater" +
             "\n9. Campera"
         );
@@ -59,7 +59,7 @@ if (cantidadPrendas <= 0 || isNaN(cantidadPrendas)) {
         } else if (tipoPrenda === "7") {
 
             totalCompra = totalCompra + 45000;
-            console.log("Elegiste una falda. Precio: $45.000");
+            console.log("Elegiste una pollera. Precio: $45.000");
 
         } else if (tipoPrenda === "8") {
 
