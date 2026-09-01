@@ -1,12 +1,10 @@
-# NERAK - Tienda de Indumentaria Femenina
+# NERAK - Tienda de Indumentaria
 
-## Descripción
+Este proyecto corresponde a la Pre-Entrega 2 de JavaScript de Coderhouse.
 
-NERAK es un simulador interactivo de una tienda de indumentaria femenina, desarrollado como proyecto para la Pre-Entrega 2 de JavaScript de Coderhouse.
+NERAK es una idea de tienda de indumentaria femenina. El simulador permite elegir diferentes prendas y calcular el total de una compra.
 
-El usuario puede seleccionar la cantidad de prendas que desea comprar y elegir diferentes productos de la tienda. El programa calcula automáticamente el total de la compra.
-
-## Productos disponibles
+## Productos
 
 * Remera
 * Blusa
@@ -18,26 +16,19 @@ El usuario puede seleccionar la cantidad de prendas que desea comprar y elegir d
 * Sweater
 * Campera
 
-## Funcionalidades
+## JavaScript utilizado
 
-* Solicitud del nombre mediante `prompt`.
-* Selección de la cantidad de prendas.
-* Selección de productos mediante opciones numéricas.
-* Cálculo del precio total.
-* Uso de `if`, `else if` y `else`.
-* Uso de un ciclo `for`.
-* Uso de `alert` y `console.log`.
+* Variables `const` y `let`
+* `prompt`
+* `alert`
+* `console.log`
+* Condicionales `if`, `else if` y `else`
+* Ciclo `for`
 
-## Tecnologías utilizadas
+## Tecnologías
 
-* HTML5
+* HTML
 * JavaScript
 
-## Objetivo
-
-Aplicar los conceptos fundamentales de JavaScript mediante un simulador de compra relacionado con una futura marca de indumentaria femenina.
-
-## Proyecto
-
-NERAK es un proyecto pensado para continuar desarrollándose a futuro como una marca real de indumentaria femenina y posteriormente como un sitio de comercio electrónico.
+**Pre-Entrega 2 - JavaScript - Coderhouse**
 
