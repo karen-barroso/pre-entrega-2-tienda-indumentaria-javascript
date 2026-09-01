@@ -12,7 +12,7 @@ NERAK es una idea de tienda de indumentaria femenina. En este simulador el usuar
 * Jean
 * Pantalón
 * Vestido
-* Falda
+* Pollera
 * Sweater
 * Campera
 
