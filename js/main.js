@@ -13,7 +13,7 @@ let totalCompra = 0;
 
 for (let i = 1; i <= cantidadPrendas; i++) {
 
-    const tipoPrenda = prompt(
+    let tipoPrenda = prompt(
         "Prenda número " + i +
         "\n¿Qué querés comprar?" +
         "\n1. Remera" +
@@ -27,54 +27,81 @@ for (let i = 1; i <= cantidadPrendas; i++) {
         "\n9. Campera"
     );
 
-    if (tipoPrenda === "1") {
+    while (
+        tipoPrenda !== "1" &&
+        tipoPrenda !== "2" &&
+        tipoPrenda !== "3" &&
+        tipoPrenda !== "4" &&
+        tipoPrenda !== "5" &&
+        tipoPrenda !== "6" &&
+        tipoPrenda !== "7" &&
+        tipoPrenda !== "8" &&
+        tipoPrenda !== "9"
+    ) {
 
-        totalCompra = totalCompra + 25000;
-        console.log("Elegiste una remera. Precio: $25.000");
+        alert("Opción no válida. Por favor, elegí una prenda del 1 al 9.");
 
-    } else if (tipoPrenda === "2") {
+        tipoPrenda = prompt(
+            "Prenda número " + i +
+            "\n¿Qué querés comprar?" +
+            "\n1. Remera" +
+            "\n2. Blusa" +
+            "\n3. Camisa" +
+            "\n4. Jean" +
+            "\n5. Pantalón" +
+            "\n6. Vestido" +
+            "\n7. Pollera" +
+            "\n8. Sweater" +
+            "\n9. Campera"
+        );
+    }
 
-        totalCompra = totalCompra + 35000;
-        console.log("Elegiste una blusa. Precio: $35.000");
+    switch (tipoPrenda) {
 
-    } else if (tipoPrenda === "3") {
+        case "1":
+            totalCompra = totalCompra + 25000;
+            console.log("Elegiste una remera. Precio: $25.000");
+            break;
 
-        totalCompra = totalCompra + 45000;
-        console.log("Elegiste una camisa. Precio: $45.000");
+        case "2":
+            totalCompra = totalCompra + 35000;
+            console.log("Elegiste una blusa. Precio: $35.000");
+            break;
 
-    } else if (tipoPrenda === "4") {
+        case "3":
+            totalCompra = totalCompra + 45000;
+            console.log("Elegiste una camisa. Precio: $45.000");
+            break;
 
-        totalCompra = totalCompra + 65000;
-        console.log("Elegiste un jean. Precio: $65.000");
+        case "4":
+            totalCompra = totalCompra + 65000;
+            console.log("Elegiste un jean. Precio: $65.000");
+            break;
 
-    } else if (tipoPrenda === "5") {
+        case "5":
+            totalCompra = totalCompra + 55000;
+            console.log("Elegiste un pantalón. Precio: $55.000");
+            break;
 
-        totalCompra = totalCompra + 55000;
-        console.log("Elegiste un pantalón. Precio: $55.000");
+        case "6":
+            totalCompra = totalCompra + 55000;
+            console.log("Elegiste un vestido. Precio: $55.000");
+            break;
 
-    } else if (tipoPrenda === "6") {
+        case "7":
+            totalCompra = totalCompra + 45000;
+            console.log("Elegiste una pollera. Precio: $45.000");
+            break;
 
-        totalCompra = totalCompra + 55000;
-        console.log("Elegiste un vestido. Precio: $55.000");
+        case "8":
+            totalCompra = totalCompra + 50000;
+            console.log("Elegiste un sweater. Precio: $50.000");
+            break;
 
-    } else if (tipoPrenda === "7") {
-
-        totalCompra = totalCompra + 45000;
-        console.log("Elegiste una pollera. Precio: $45.000");
-
-    } else if (tipoPrenda === "8") {
-
-        totalCompra = totalCompra + 50000;
-        console.log("Elegiste un sweater. Precio: $50.000");
-
-    } else if (tipoPrenda === "9") {
-
-        totalCompra = totalCompra + 75000;
-        console.log("Elegiste una campera. Precio: $75.000");
-
-    } else {
-
-        console.log("Opción no válida.");
+        case "9":
+            totalCompra = totalCompra + 75000;
+            console.log("Elegiste una campera. Precio: $75.000");
+            break;
     }
 }
 
