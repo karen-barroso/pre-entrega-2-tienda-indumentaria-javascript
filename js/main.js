@@ -1,13 +1,97 @@
 const nombre = prompt("Bienvenida a NERAK. ¿Cuál es tu nombre?");
 
-let cantidadPrendas = parseInt(prompt("¿Cuántas prendas querés comprar?"));
+const productosNERAK = [
+    "Remera",
+    "Blusa",
+    "Camisa",
+    "Jean",
+    "Pantalón",
+    "Vestido",
+    "Pollera",
+    "Sweater",
+    "Campera"
+];
 
-while (cantidadPrendas <= 0 || cantidadPrendas > 20 || isNaN(cantidadPrendas)) {
+productosNERAK.push("Conjunto");
 
-    alert("Por favor, ingresá una cantidad válida de prendas. Podés comprar entre 1 y 20 prendas.");
+productosNERAK.unshift("Top");
 
-    cantidadPrendas = parseInt(prompt("¿Cuántas prendas querés comprar?"));
+const productoEliminado = productosNERAK.pop();
+
+alert("Se ha eliminado el elemento: " + productoEliminado);
+console.log("Se ha eliminado el elemento: " + productoEliminado);
+
+const productoBuscado = prompt(
+    "¿Qué prenda querés buscar en el catálogo de NERAK?"
+);
+
+const productoBuscadoNormalizado = productoBuscado.trim().toLowerCase();
+
+const catalogoNormalizado = productosNERAK.map(function(producto) {
+    return producto.toLowerCase();
+});
+
+if (catalogoNormalizado.includes(productoBuscadoNormalizado)) {
+
+    const posicion = catalogoNormalizado.indexOf(productoBuscadoNormalizado);
+
+    console.log(
+        productoBuscado +
+        " está disponible en el catálogo, en la posición " +
+        posicion
+    );
+
+    alert(productoBuscado + " está disponible en el catálogo.");
+
+} else {
+
+    console.log(
+        productoBuscado +
+        " no está disponible en el catálogo."
+    );
+
+    alert(
+        productoBuscado +
+        " no está disponible en el catálogo."
+    );
 }
+
+productosNERAK.splice(2, 1, "Camisa oversize");
+
+function listarProductos(lista) {
+
+    console.log("--- Catálogo actual de NERAK ---");
+
+    for (const producto of lista) {
+
+        console.log("Producto: " + producto);
+    }
+
+    console.log("Total de productos: " + lista.length);
+}
+
+listarProductos(productosNERAK);
+
+let cantidadPrendas = parseInt(
+    prompt("¿Cuántas prendas querés comprar?")
+);
+
+while (
+    cantidadPrendas <= 0 ||
+    cantidadPrendas > 20 ||
+    isNaN(cantidadPrendas)
+) {
+
+    alert(
+        "Por favor, ingresá una cantidad válida de prendas. Podés comprar entre 1 y 20 prendas."
+    );
+
+    cantidadPrendas = parseInt(
+        prompt("¿Cuántas prendas querés comprar?")
+    );
+}
+
+let totalCompra = 0;
 
 function obtenerPrecio(tipoPrenda) {
 
@@ -63,59 +147,12 @@ const calcularSubtotal = function(precio, cantidad) {
 const aplicarDescuento = (total) => {
 
     if (total >= 150000) {
+
         return total * 0.90;
     }
 
     return total;
 };
-
-function obtenerNombrePrenda(tipoPrenda) {
-
-    let nombrePrenda = "";
-
-    switch (tipoPrenda) {
-
-        case "1":
-            nombrePrenda = "remera";
-            break;
-
-        case "2":
-            nombrePrenda = "blusa";
-            break;
-
-        case "3":
-            nombrePrenda = "camisa";
-            break;
-
-        case "4":
-            nombrePrenda = "jean";
-            break;
-
-        case "5":
-            nombrePrenda = "pantalón";
-            break;
-
-        case "6":
-            nombrePrenda = "vestido";
-            break;
-
-        case "7":
-            nombrePrenda = "pollera";
-            break;
-
-        case "8":
-            nombrePrenda = "sweater";
-            break;
-
-        case "9":
-            nombrePrenda = "campera";
-            break;
-    }
-
-    return nombrePrenda;
-}
-
-let totalCompra = 0;
 
 for (let i = 1; i <= cantidadPrendas; i++) {
 
@@ -145,7 +182,9 @@ for (let i = 1; i <= cantidadPrendas; i++) {
         tipoPrenda !== "9"
     ) {
 
-        alert("Opción no válida. Por favor, elegí una prenda del 1 al 9.");
+        alert(
+            "Opción no válida. Por favor, elegí una prenda del 1 al 9."
+        );
 
         tipoPrenda = prompt(
             "Prenda número " + i +
@@ -164,17 +203,12 @@ for (let i = 1; i <= cantidadPrendas; i++) {
 
     const precio = obtenerPrecio(tipoPrenda);
 
-    const nombrePrenda = obtenerNombrePrenda(tipoPrenda);
-
     const subtotal = calcularSubtotal(precio, 1);
 
     totalCompra = totalCompra + subtotal;
 
     console.log(
-        "Elegiste una " +
-        nombrePrenda +
-        ". Precio: $" +
-        precio
+        "Elegiste una prenda. Precio: $" + precio
     );
 }
 
@@ -191,7 +225,7 @@ if (totalConDescuento < totalCompra) {
         "Total de tu compra: $" +
         totalCompra +
         ".\n" +
-        "Tenés un 10% de descuento por superar los $150.000.\n" +
+        "Tenés un 10% de descuento.\n" +
         "Total final: $" +
         totalConDescuento +
         ".";
