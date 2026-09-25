@@ -9,6 +9,112 @@ while (cantidadPrendas <= 0 || cantidadPrendas > 20 || isNaN(cantidadPrendas)) {
     cantidadPrendas = parseInt(prompt("¿Cuántas prendas querés comprar?"));
 }
 
+function obtenerPrecio(tipoPrenda) {
+
+    let precio = 0;
+
+    switch (tipoPrenda) {
+
+        case "1":
+            precio = 25000;
+            break;
+
+        case "2":
+            precio = 35000;
+            break;
+
+        case "3":
+            precio = 45000;
+            break;
+
+        case "4":
+            precio = 65000;
+            break;
+
+        case "5":
+            precio = 55000;
+            break;
+
+        case "6":
+            precio = 55000;
+            break;
+
+        case "7":
+            precio = 45000;
+            break;
+
+        case "8":
+            precio = 50000;
+            break;
+
+        case "9":
+            precio = 75000;
+            break;
+    }
+
+    return precio;
+}
+
+const calcularSubtotal = function(precio, cantidad) {
+
+    return precio * cantidad;
+};
+
+const aplicarDescuento = (total) => {
+
+    if (total >= 150000) {
+        return total * 0.90;
+    }
+
+    return total;
+};
+
+function obtenerNombrePrenda(tipoPrenda) {
+
+    let nombrePrenda = "";
+
+    switch (tipoPrenda) {
+
+        case "1":
+            nombrePrenda = "remera";
+            break;
+
+        case "2":
+            nombrePrenda = "blusa";
+            break;
+
+        case "3":
+            nombrePrenda = "camisa";
+            break;
+
+        case "4":
+            nombrePrenda = "jean";
+            break;
+
+        case "5":
+            nombrePrenda = "pantalón";
+            break;
+
+        case "6":
+            nombrePrenda = "vestido";
+            break;
+
+        case "7":
+            nombrePrenda = "pollera";
+            break;
+
+        case "8":
+            nombrePrenda = "sweater";
+            break;
+
+        case "9":
+            nombrePrenda = "campera";
+            break;
+    }
+
+    return nombrePrenda;
+}
+
 let totalCompra = 0;
 
 for (let i = 1; i <= cantidadPrendas; i++) {
@@ -56,61 +162,50 @@ for (let i = 1; i <= cantidadPrendas; i++) {
         );
     }
 
-    switch (tipoPrenda) {
+    const precio = obtenerPrecio(tipoPrenda);
 
-        case "1":
-            totalCompra = totalCompra + 25000;
-            console.log("Elegiste una remera. Precio: $25.000");
-            break;
+    const nombrePrenda = obtenerNombrePrenda(tipoPrenda);
 
-        case "2":
-            totalCompra = totalCompra + 35000;
-            console.log("Elegiste una blusa. Precio: $35.000");
-            break;
+    const subtotal = calcularSubtotal(precio, 1);
 
-        case "3":
-            totalCompra = totalCompra + 45000;
-            console.log("Elegiste una camisa. Precio: $45.000");
-            break;
+    totalCompra = totalCompra + subtotal;
 
-        case "4":
-            totalCompra = totalCompra + 65000;
-            console.log("Elegiste un jean. Precio: $65.000");
-            break;
-
-        case "5":
-            totalCompra = totalCompra + 55000;
-            console.log("Elegiste un pantalón. Precio: $55.000");
-            break;
-
-        case "6":
-            totalCompra = totalCompra + 55000;
-            console.log("Elegiste un vestido. Precio: $55.000");
-            break;
-
-        case "7":
-            totalCompra = totalCompra + 45000;
-            console.log("Elegiste una pollera. Precio: $45.000");
-            break;
-
-        case "8":
-            totalCompra = totalCompra + 50000;
-            console.log("Elegiste un sweater. Precio: $50.000");
-            break;
-
-        case "9":
-            totalCompra = totalCompra + 75000;
-            console.log("Elegiste una campera. Precio: $75.000");
-            break;
-    }
+    console.log(
+        "Elegiste una " +
+        nombrePrenda +
+        ". Precio: $" +
+        precio
+    );
 }
 
-const mensajeFinal =
-    "Gracias por comprar en NERAK, " +
-    nombre +
-    ". El total de tu compra es de $" +
-    totalCompra +
-    ".";
+const totalConDescuento = aplicarDescuento(totalCompra);
+
+let mensajeFinal;
+
+if (totalConDescuento < totalCompra) {
+
+    mensajeFinal =
+        "Gracias por comprar en NERAK, " +
+        nombre +
+        ".\n" +
+        "Total de tu compra: $" +
+        totalCompra +
+        ".\n" +
+        "Tenés un 10% de descuento por superar los $150.000.\n" +
+        "Total final: $" +
+        totalConDescuento +
+        ".";
+
+} else {
+
+    mensajeFinal =
+        "Gracias por comprar en NERAK, " +
+        nombre +
+        ".\n" +
+        "El total de tu compra es de $" +
+        totalConDescuento +
+        ".";
+}
 
 alert(mensajeFinal);
 console.log(mensajeFinal);
