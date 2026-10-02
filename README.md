@@ -1,10 +1,26 @@
 # NERAK - Tienda de Indumentaria
 
-Este proyecto corresponde a la Pre-Entrega 2 de JavaScript de Coderhouse.
+Proyecto de JavaScript realizado para Coderhouse. NERAK es un simulador de una tienda de indumentaria femenina que continúa desarrollándose como proyecto.
 
-NERAK es una idea de tienda de indumentaria femenina. En este simulador el usuario puede elegir la cantidad de prendas que quiere comprar, seleccionar los productos y obtener el total de la compra.
+## Pre-Entrega 4
 
-## Productos
+En esta entrega se incorporan arrays y métodos para trabajar con el catálogo de productos y relacionarlos con el flujo de compra.
+
+### Funcionalidades
+
+* Catálogo de productos almacenado en un array.
+* Uso de `push()` para agregar prendas al final.
+* Uso de `unshift()` para agregar prendas al principio.
+* Uso de `pop()` para eliminar la última prenda.
+* Uso de `splice()` para reemplazar prendas.
+* Uso de `includes()` para validar productos.
+* Uso de `indexOf()` para encontrar la posición de una prenda.
+* Uso de `for...of` para recorrer el catálogo.
+* Validación de las opciones ingresadas por el usuario.
+* Simulación de una compra mediante `prompt`, `alert` y `console.log`.
+* Cálculo del total de la compra y aplicación de descuento.
+
+### Productos
 
 * Remera
 * Blusa
@@ -16,29 +32,8 @@ NERAK es una idea de tienda de indumentaria femenina. En este simulador el usuar
 * Sweater
 * Campera
 
-## ¿Cómo funciona?
-
-Primero se solicita el nombre del usuario y la cantidad de prendas que quiere comprar.
-
-Luego, mediante un `for`, se muestran las opciones de productos para cada prenda. Dependiendo de la opción elegida, se suma el precio correspondiente al total.
-
-Al finalizar la compra, se muestra el total mediante un `alert` y también en la consola.
-
-## JavaScript utilizado
-
-* Variables `const` y `let`
-* `prompt`
-* `alert`
-* `console.log`
-* Condicionales `if`, `else if` y `else`
-* Ciclo `for`
-* Operadores y acumulación de valores
-
-## Tecnologías
+### Tecnologías
 
 * HTML
 * JavaScript
-
-**Proyecto realizado para la Pre-Entrega 2 de JavaScript - Coderhouse.**
-
-
+* Git y GitHub
